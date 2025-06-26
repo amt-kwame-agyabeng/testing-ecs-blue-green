@@ -1,0 +1,15 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:eu-north-1:137068240060:task-definition/testing-ecs-blue-green-td:1"
+        LoadBalancerInfo:
+          ContainerName: "testing-ecs-blue-green"
+          ContainerPort: 3000
+        PlatformVersion: "LATEST"
+        NetworkConfiguration:
+          AwsvpcConfiguration:
+            AssignPublicIp: "ENABLED"
+            Subnets: ["subnet-0e69fa76f9cce7dd4", "subnet-058b45e935317ab4b"]
+            SecurityGroups: ["sg-08377b1cc49704a4a"]
