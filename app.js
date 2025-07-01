@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
     <html>
       <body>
         <h1>Welcome to ${process.env.APP_NAME || 'My App'}</h1>
-        <p>Version: ${process.env.APP_VERSION || '3.1.0'}</p>
+        <p>Version: ${process.env.APP_VERSION || '3.1.3'}</p>
         <p>Environment: ${process.env.ENVIRONMENT || 'development'}</p>
       </body>
     </html>
